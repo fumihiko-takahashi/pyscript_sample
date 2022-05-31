@@ -1,6 +1,6 @@
 # PyScript Samples
 
-[Demo Page](https://fumihiko-takahashi.github.io/pyscript_sample.github.io/)
+[Demo Page](https://fumihiko-takahashi.github.io/pyscript_sample/)
 
 ## Samples
 
