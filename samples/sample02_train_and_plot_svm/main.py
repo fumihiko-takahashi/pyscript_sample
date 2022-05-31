@@ -1,22 +1,26 @@
 import lib
 
 items = lib.Items()
-new_item_elem = Element("new-item-elem")
-
-# 初期表示
-fig = lib.plot(items.x, None, None, None)
-pyscript.write("figure1", fig)
+x_elem = Element("x")
+y_elem = Element("y")
+label_elem = Element("label")
 
 
-def add_item(*ags, **kws):
-    new_item = new_item_elem.element.value
-    if len(new_item) == 0:
-        return None
+def clear_form():
+    x_elem.clear()
+    y_elem.clear()
 
-    # new item に要素があれば実行
-    _x0, _x1, _y = list(map(float, new_item.split(",")))
-    new_item_elem.clear()
-    items.append(_x0, _x1, _y)
+
+def train_and_plot(*ags, **kws):
+    _x0 = x_elem.element.value
+    _x1 = y_elem.element.value
+    _y = label_elem.element.value
+    # add new item
+    if len(_x0) > 0 and len(_x1) > 0 and len(_y) > 0:
+        _x0, _x1, _y = list(map(float, [_x0, _x1, _y]))
+
+        clear_form()
+        items.append(_x0, _x1, _y)
 
     # train
     clf = lib.train(items.x, items.y)
@@ -27,3 +31,6 @@ def add_item(*ags, **kws):
     # plot
     fig = lib.plot(items.x, y_pred, clf.coef_[0], clf.intercept_[0])
     pyscript.write("figure1", fig)
+
+
+train_and_plot()
