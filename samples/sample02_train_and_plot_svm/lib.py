@@ -35,9 +35,9 @@ def plot(x, y=None, coef=None, intercept=None):
         ax.scatter(x[:, 0], x[:, 1], label="items")
     else:
         _x = x[np.where(y == 1.0)]
-        ax.scatter(_x[:, 0], _x[:, 1], label="pos")
+        ax.scatter(_x[:, 0], _x[:, 1], label="1")
         _x = x[np.where(y == 0.0)]
-        ax.scatter(_x[:, 0], _x[:, 1], label="neg")
+        ax.scatter(_x[:, 0], _x[:, 1], label="0")
 
     if coef is not None and intercept is not None:
         line = np.linspace(x[:, 0].min(), x[:, 0].max())

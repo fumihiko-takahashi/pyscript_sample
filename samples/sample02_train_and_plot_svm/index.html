@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PyScript Sample2</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <py-env>
+        - paths:
+            - lib.py    
+        - matplotlib
+        - numpy
+        - scikit-learn
+    </py-env>
+
+  </head>
+  <body>
+    <h1>Sample2: train and plot SVM</h1>
+
+    <br/>
+    <div>
+        Add item <br/>
+        x: <input id="x" class="border flex-1 mr-3 border-gray-300 p-2 rounded" type="number">
+        y: <input id="y" class="border flex-1 mr-3 border-gray-300 p-2 rounded" type="number">
+        label:
+        <select id="label" class="border border-gray-300">
+          <option value="0">0</option>
+          <option value="1">1</option>
+        </select>
+        <button id="train-btn" class="p-2 text-white bg-blue-600 border border-blue-600 rounded" type="submit" pys-onClick="train_and_plot">
+            Train
+        </button>
+    </div>
+
+    <div id="figure1"></div>
+
+    <py-script src="main.py" />
+  </body>
+</html>
