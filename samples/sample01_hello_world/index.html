@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PyScript Sample1</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
+  </head>
+  <body>
+    <h1>Sample1: hello world</h1>
+
+    <div id="text1"></div>
+
+    <py-script>
+      from datetime import datetime
+
+      now_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+      text = f"hello world! at {now_str}"
+
+      pyscript.write("text1", text)
+    </py-script>
+  </body>
+</html>
