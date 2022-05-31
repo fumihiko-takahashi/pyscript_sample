@@ -10,15 +10,13 @@
   <body>
     <h1>Sample1: hello world</h1>
 
-    <div id="text1"></div>
-
     <py-script>
       from datetime import datetime
 
       now_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
       text = f"hello world! at {now_str}"
-
-      pyscript.write("text1", text)
+      print(text)
     </py-script>
+
   </body>
 </html>
